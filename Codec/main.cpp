@@ -10,7 +10,13 @@
 
 #include "Endian.h"
 
-#pragma warning (disable : 4996)
+#ifdef __APPLE__
+#define stricmp strcasecmp
+#endif
+
+#ifdef _MSC_VER
+#pragma warning(disable : 4996)
+#endif
 
 enum
 {
